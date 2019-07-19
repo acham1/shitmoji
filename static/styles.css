@@ -1,6 +1,6 @@
 body {
 	padding: 100;
-	background-color: #6B62C2;
+	background-color: rgb(131, 85, 0);
 	color: #e6e6fa;
 	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
@@ -18,7 +18,20 @@ h2 {
 	font-weight: 300;
 }
 
-.shipmoji {
+h3 {
+	text-align: center;
+	font-weight: 200;
+}
+
+a {
+	color: #fff;
+}
+
+.content {
+	margin: 10%;
+}
+
+.shitmoji {
 	display: inline-block;
 	text-align: left;
 	font-family: 'Source Code Pro', monospace;
@@ -26,11 +39,11 @@ h2 {
 	font-size: 2em;
 }
 
-.shipmoji-container {
+.shitmoji-container {
 	text-align: center;
 	width: 40%;
 	margin: 0 auto;
-	background-color: #776ec4;
+	background-color: #ffcc6e;
 	border: thin solid #e6e6fa;
 	border-radius: .2em;
 	padding: 15;
