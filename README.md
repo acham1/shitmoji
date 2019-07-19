@@ -1,1 +1,1 @@
-# ShipMoji
+# ShitMoji
