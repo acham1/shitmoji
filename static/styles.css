@@ -28,7 +28,18 @@ a {
 }
 
 .content {
-	margin: 10%;
+	margin-top: 5rem;
+	text-align: center;
+}
+
+.shitmoji-container {
+	display: inline-block;
+	text-align: center;
+	width: 25rem;
+	background-color: #ffcc6e;
+	border: thin solid #e6e6fa;
+	border-radius: .2rem;
+	padding: 15;
 }
 
 .shitmoji {
@@ -36,15 +47,5 @@ a {
 	text-align: left;
 	font-family: 'Source Code Pro', monospace;
 	white-space: pre;
-	font-size: 2em;
-}
-
-.shitmoji-container {
-	text-align: center;
-	width: 40%;
-	margin: 0 auto;
-	background-color: #ffcc6e;
-	border: thin solid #e6e6fa;
-	border-radius: .2em;
-	padding: 15;
+	font-size: 2rem;
 }
