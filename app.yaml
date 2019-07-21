@@ -3,11 +3,6 @@ api_version: 1
 service: shitmoji
 threadsafe: true
 
-libraries:
-- name: ssl
-  version: latest
-
 handlers:
 - url: /.*
   script: main.app
-  secure: always
