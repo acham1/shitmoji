@@ -1,5 +1,5 @@
 #! /bin/sh
 
 set euo pipefail
-pip install -t lib/ -r requirements.txt
+pip3 install -t lib/ -r requirements.txt
 gcloud app deploy

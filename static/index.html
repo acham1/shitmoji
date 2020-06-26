@@ -1,27 +1,33 @@
 <html>
-	<head>
-		<link rel='icon' href='https://assets.alanch.am/image/favicon/orange.png' type='image/x-icon' />
-		<link rel="stylesheet" href="/styles.css" />
-		<title>ShitMoji</title>
-	</head>
-	<body>
-		<h1> ShitMoji </h1>
-		<h3> A shitty <a href="https://github.com/acham1/shitmoji">fork</a> of qstearns's <a href="https://github.com/qstearns/shipmoji">shipmoji</a> (sfw) </h3>
-		<div class="content">
-			<h2> Code is sad, but poop is happy. </h2>
-			<div class="shitmoji-container" >
-				<div id="shitmoji" class="shitmoji"></div>
-			</div>
-		</div>
-	</body>
-	<script>
-		setEmoji = (emoji) => {
-			el = document.querySelector("#shitmoji");
-			el.innerHTML = emoji;
-		};
+  <head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>ShitMoji</title>
+  </head>
+  <body>
+    <h1>ShitMoji</h1>
+    <h3>
+      A shitty <a href="https://github.com/acham1/shitmoji">fork</a> of
+      qstearns's
+      <a href="https://github.com/qstearns/shipmoji">shipmoji</a> (sfw)
+    </h3>
+    <div class="content">
+      <h2>Code is sad, but poop is happy.</h2>
+      <div class="shitmoji-container">
+        <div id="shitmoji" class="shitmoji"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    setEmoji = (emoji) => {
+      el = document.querySelector("#shitmoji");
+      el.innerHTML = emoji;
+    };
 
-		emojiJson = fetch('/rand').then(resp => (
-			resp.json().then(json => { setEmoji(json.emoji); })
-		));
-	</script>
+    emojiJson = fetch("/rand").then((resp) =>
+      resp.json().then((json) => {
+        setEmoji(json.emoji);
+      })
+    );
+  </script>
 </html>
