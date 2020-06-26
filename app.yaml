@@ -1,8 +1,6 @@
-runtime: python27
-api_version: 1
+runtime: python38
 service: shitmoji
-threadsafe: true
 
 handlers:
-- url: /.*
-  script: main.app
+  - url: /.*
+    script: auto
