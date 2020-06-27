@@ -3,6 +3,7 @@ from emojis import emojis
 import random
 
 app = Flask(__name__, static_url_path='')
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 300
 
 @app.route('/')
 def serve():

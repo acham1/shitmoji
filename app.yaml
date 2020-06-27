@@ -1,5 +1,6 @@
 runtime: python38
 service: shitmoji
+default_expiration: "60s"
 
 handlers:
   - url: /.*
