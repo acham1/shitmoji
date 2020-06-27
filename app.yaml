@@ -4,3 +4,4 @@ service: shitmoji
 handlers:
   - url: /.*
     script: auto
+    secure: always
