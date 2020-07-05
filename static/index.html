@@ -41,7 +41,7 @@
           />
           Your browser does not support the audio element.
         </audio>
-        <div id="friend-quote"></div>
+        <div id="friend-quote" style="width: 50%; margin: auto;"></div>
         <script>
           quotes = [
             "Quinn!! You are my GUY -- CJ Apel",
@@ -74,15 +74,15 @@
       })
     );
 
+    setRandom = () =>
+      (document.getElementById("friend-quote").innerHTML =
+        quotes[Math.floor(Math.random() * quotes.length)]);
+
     activateTrapCard = () => {
       document.getElementById("audio").play();
       document.getElementById("surprise").style.display = "block";
-      setInterval(
-        () =>
-          (document.getElementById("friend-quote").innerHTML =
-            quotes[Math.floor(Math.random() * quotes.length)]),
-        5000
-      );
+      setRandom();
+      setInterval(setRandom, 3310);
     };
   </script>
 </html>
