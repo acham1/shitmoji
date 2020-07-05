@@ -15,5 +15,8 @@ def send_assets(path):
 
 @app.route('/rand')
 def rand():
-    return jsonify({ 'emoji': random.choice(emojis) })
+    emoji = random.choice(emojis)
+    if emoji == '🦙💩':
+        return jsonify({ 'emoji': '''<a onclick="activateTrapCard()">🦙💩</a>'''})
+    return jsonify({ 'emoji': emoji })
 
