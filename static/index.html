@@ -41,13 +41,31 @@
           />
           Your browser does not support the audio element.
         </audio>
+        <div id="friend-quote"></div>
+        <script>
+          quotes = [
+            "Quinn!! You are my GUY -- CJ Apel",
+            "Quinn and I went on a couple of ski trips, and he's killer in trees and moguls. I definitely murdered my quads trying to keep up with him on some blacks lmao -- Eric Summins",
+            "Quinn taught me that the only programming language worth learning and using is Elixir. He then proceeded to send me many, many Github profiles of accomplished Elixir engineers for us to try and hire. -- Daniel Kornreich",
+            "Quinn was my first Phone Screen ever. Having contributed to hiring him is my biggest contribution to LiveRamp by far -- Romain Faugeroux",
+            "One of my first interactions with Quinn was running into him and @jlang in the elevator (probably going for a scratchers run), and asking if they were related. They immediately lied about being brothers, and I could tell from then on that we were going to be friends. Going to the back bar and hearing Quinn’s booming laugh was always an indicator of a great time to come, and I can’t count the number of Friday nights I’ve spent draining LR of their beer budget with him. 10/10 dude, my only regret is that I secretly didn’t know which one was Josh and which one was Quinn for a period of time that I’m uncomfortable admitting -- Stephen Frost",
+            "Does anyone think it's a coincidence that Quinn is leaving and that RampCamp is cancelled this year? I ask because he always made RampCamp great and I would certainly miss him a lot -- Ian Ekblaw",
+            "My interview with Quinn mostly involved talked about sandwiches -- Zachary Cicala",
+            "I once saw Quinn straight up deliver a newborn baby llama from the back of a taxicab in the tenderloin. Good guy -- CJ Apel",
+            "Quinn stepped up last minute and was Camp Counselor at RampCamp 2019 - there would have been a lot of lost people at Camp Navarro that year without him (though no guarantees people didn't get lost following him back to his campsite). Without Quinn and his fancy headset, who the hell is going to run our Annual Chess Tournament and Trivia Nights with @cjapel? They still owe the public a guest appearance from Matt Bellamy... the people may never forgive him for that empty promise... -- Roeh Quisao",
+            "Quinn and I have a super fun bit where he makes me out to be a Disney movie villain and I just lean into it and give him as much ammo as possible. Last summer a few weeks before RampCamp I was voluntold to be a camp counselor and really rubbed it in his face, explaining that I was more reliable and likable and just all around a better human and that's why I was asked and he wasn't. RampCamp came around, someone bailed, and last minute Quinn was asked to be a camp counselor. He actually got a special shoutout at the welcome event (at which point I swear he winked at me to rub it in.) I've never felt more like a Disney movie villain. -- Nadine Ott",
+            "Quinn has a wonderful gift of being able to engage with anyone, at any time, with any topic. He has an incredibly curiosity that gives him a wealth of material and experience to draw from, that he uses to empathize with and beeveryone around him. I've seen him use this to great effect in all sorts of settings - whether its a new LiveRamper attending their first back bar happy hour, or a nervous candidate he's interviewing, Quinn instantly welcomes newcomers with humor and kindness that makes them feel at ease and at home. This combination of curiosity and empathy makes Quinn an awesome mentor, co-worker, and friend, and will ensure his success wherever he goes! -- Parker Mossman",
+            "I remember the first time I interacted with Quinn at the back bar and immediately knew I had some social competition. I was already so intrigued by the fact that someone from engineering was interested in talking to me since my networks at LiveRamp didnt extend beyond sales and product but I was completely invested in making this friendship a thing. Every time I went up to the back bar after that, hoping to see Quinn, he would be there, usually at the center of some wild conversation about something everyone in the circle was completely taken by. So naturally, I knew the strategic move was to form an alliance with this social butterfly so I could get in on all these inside jokes (and make more eng friends obv). Quinn was quick to let me in on all the hot eng slack channels highlighting where I could find the spicy goss. Overtime I found that some nights I’d just want to talk to Quinn about whatever projects he was working on. All to say that most of you know how the story goes from here, but I have been completely enamored by his radiance, passion, honesty and consideration for others since I met him that fateful day. LiveRamp will honestly never be the same without him but is so much better off because of he was here. -- Kendall Sopoci",
+            'Every interaction I\'ve had with Quinn was funny. He spent the last 3 years extrapolating that all French words have a silent P that we actually should pronounce, calling me Bap by just "hinting the P", and teaching me fun expressions like "shredding the gnar", "tognar" or "buttering the mashed potatoes". I\'ll miss seeing his face at work but I know we\'ll continue to plan on seeing each other in Tahoe and not do it! -- Baptiste Benet',
+            "It was very lucky that Alex paired all the interns in my year with mentors that had similar names, because that mean I (Quenneville) got paired with Quinn, who is the best mentor, teammate, and you could hope to have. Quinn has a knack for teaching and problem-solving, but more importantly he is really talented at empowering people and nging them together. I think it’s hard to quantify how profoundly Quinn has influenced me as a developer and human. Wherever my career and life take me, it’ll without a doubt be thanks to the skills and values I learned from Quinn over the past few years. -- Dylan Quenneville",
+          ];
+        </script>
       </div>
     </div>
   </body>
   <script>
     setEmoji = (emoji) => {
-      el = document.querySelector("#shitmoji");
-      el.innerHTML = emoji;
+      el = document.querySelector("#shitmoji").innerHTML = emoji;
     };
 
     emojiJson = fetch("/rand").then((resp) =>
@@ -59,6 +77,12 @@
     activateTrapCard = () => {
       document.getElementById("audio").play();
       document.getElementById("surprise").style.display = "block";
+      setInterval(
+        () =>
+          (document.getElementById("friend-quote").innerHTML =
+            quotes[Math.floor(Math.random() * quotes.length)]),
+        5000
+      );
     };
   </script>
 </html>
