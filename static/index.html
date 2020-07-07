@@ -14,7 +14,13 @@
     <div class="content">
       <h2>Code is sad, but poop is happy.</h2>
       <div class="shitmoji-container">
-        <div id="shitmoji" class="shitmoji"></div>
+        <span class="click-here" style="display: none; color: black;"
+          >Click Here ⇨</span
+        >
+        <span id="shitmoji" class="shitmoji"></span>
+        <span class="click-here" style="display: none; color: black;"
+          >⇦ Click There</span
+        >
       </div>
     </div>
     <div
@@ -85,14 +91,15 @@
     };
 
     blinkLlama = () => {
-      el = document.querySelector("#llama");
-      if (!el) {
-        return;
-      }
-      if (el.style.backgroundColor != "rgb(0, 0, 0)") {
-        el.style.backgroundColor = "rgb(0, 0, 0)";
+      el = document.querySelector(".click-here");
+      if (el.style.display != "inline") {
+        document
+          .querySelectorAll(".click-here")
+          .forEach((x) => (x.style.display = "inline"));
       } else {
-        el.style.backgroundColor = "rgb(255, 255, 255)";
+        document
+          .querySelectorAll(".click-here")
+          .forEach((x) => (x.style.display = "none"));
       }
       setTimeout(blinkLlama, 333);
     };
@@ -104,16 +111,14 @@
           setEmoji(json.emoji);
         })
         .then(() => {
-          blinkLlama();
-          setTimeout(() => {
-            if (
-              document.querySelector("#shitmoji").innerHTML.includes("🦙💩")
-            ) {
+          if (document.querySelector("#shitmoji").innerHTML.includes("🦙💩")) {
+            blinkLlama();
+            setTimeout(() => {
               alert(
-                "You have been visited by Lucky Llama!\n1. Close the alert.\n2. Click the Llama for good lucks!"
+                "You have been visited by Lucky Llama!\nPet the Llama for Good Luck!"
               );
-            }
-          }, 1000);
+            }, 1000);
+          }
         })
     );
 
