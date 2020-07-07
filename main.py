@@ -17,6 +17,6 @@ def send_assets(path):
 def rand():
     emoji = random.choice(emojis)
     if emoji == '🦙💩':
-        return jsonify({ 'emoji': '''<a style="cursor: pointer;" onclick="activateTrapCard()">🦙💩</a>'''})
+        return jsonify({ 'emoji': '''<a id="llama" style="cursor: pointer;" onclick="activateTrapCard()">🦙💩</a>'''})
     return jsonify({ 'emoji': emoji })
 

@@ -84,6 +84,19 @@
       el = document.querySelector("#shitmoji").innerHTML = emoji;
     };
 
+    blinkLlama = () => {
+      el = document.querySelector("#llama");
+      if (!el) {
+        return;
+      }
+      if (el.style.backgroundColor != "rgb(0, 0, 0)") {
+        el.style.backgroundColor = "rgb(0, 0, 0)";
+      } else {
+        el.style.backgroundColor = "rgb(255, 255, 255)";
+      }
+      setTimeout(blinkLlama, 333);
+    };
+
     emojiJson = fetch("/rand").then((resp) =>
       resp
         .json()
@@ -91,6 +104,7 @@
           setEmoji(json.emoji);
         })
         .then(() => {
+          blinkLlama();
           setTimeout(() => {
             if (
               document.querySelector("#shitmoji").innerHTML.includes("🦙💩")
@@ -99,7 +113,7 @@
                 "You have been visited by Lucky Llama!\n1. Close the alert.\n2. Click the Llama for good lucks!"
               );
             }
-          }, 100);
+          }, 1000);
         })
     );
 
